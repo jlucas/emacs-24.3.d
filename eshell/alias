@@ -1,0 +1,13 @@
+alias ll ls -l $*
+alias lla ls -la $*
+alias lld ls -ld $*
+alias e find-file $1
+alias d dired $1
+alias up2 cd ../..
+alias up3 cd ../../..
+alias up4 cd ../../../..
+alias up5 cd ../../../../..
+alias up6 cd ../../../../../..
+alias up7 cd ../../../../../../..
+alias up8 cd ../../../../../../../..
+alias up9 cd ../../../../../../../../..
