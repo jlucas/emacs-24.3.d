@@ -209,6 +209,9 @@ http://www.howardism.org/Technical/Emacs/eshell-fun.html"
 (global-set-key (kbd "C-w") 'backward-kill-word) ; as in the shell, vim. etc.
 (global-set-key (kbd "M-%") 'replace-regexp) ; do i ever not want this?
 (global-set-key (kbd "C-c c") 'delete-window)
+(global-set-key (kbd "C-c d") (lambda ()
+                                (interactive)
+                                (dired default-directory)))
 
 ;;
 ;; Notes
