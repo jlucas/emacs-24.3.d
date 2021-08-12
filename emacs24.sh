@@ -4,7 +4,7 @@ PROG=$(basename $0)
 
 EMACS_BINARY=/usr/bin/emacs
 
-EMACS24_HOME=$(readlink -f $(dirname $0)/..)
+TEMPHOME=$(readlink -f $(dirname $0)/..)
 
 if ! [ $($EMACS_BINARY -Q --batch --eval '(print emacs-major-version)') -eq 24 ]
 then
@@ -12,7 +12,7 @@ then
 	exit
 fi
 
-echo "$PROG: info: Launching Emacs 24 with home: $EMACS24_HOME"
+echo "$PROG: info: Launching Emacs 24 with home: $TEMPHOME"
 
-exec /usr/bin/env HOME=$EMACS24_HOME $EMACS_BINARY "$@"
+exec /usr/bin/env HOME=$TEMPHOME $EMACS_BINARY "$@"
 
