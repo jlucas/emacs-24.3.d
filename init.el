@@ -57,6 +57,7 @@
 ;; Initialize the package package
 (package-initialize)
 
+;; Fix a bug where dependencies are returned in reverse order
 (defadvice package-compute-transaction
 		   (before package-compute-transaction-reverse (package-list requirements) activate compile)
 		   "reverse the requirements"
