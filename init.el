@@ -46,8 +46,8 @@
 			      emacs-major-version
 			      emacs-minor-version))
 (make-directory my-temp-dir t)
-(setq auto-save-file-name-transforms `((".*" (, my-temp-dir) t)))
-(setq backup-directory-alist `((".*" , my-temp-dir)))
+(setq auto-save-file-name-transforms `((".*" ,my-temp-dir t)))
+(setq backup-directory-alist `((".*" . ,my-temp-dir)))
 (setq create-lockfiles nil)
 
 ;;
