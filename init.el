@@ -73,6 +73,14 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 
 ;;
+;; Undo-tree 0.7.4 setup
+;;
+
+(setq global-undo-tree-mode 1)
+(require 'undo-tree)
+(global-set-key (kbd "C-c u") 'undo-tree-visualize)
+
+;;
 ;; Key binds
 ;;
 

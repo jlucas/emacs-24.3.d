@@ -4,3 +4,6 @@
 [submodule "elisp/git-modes"]
 	path = elisp/git-modes
 	url = https://github.com/magit/git-modes.git
+[submodule "elisp/undo-tree"]
+	path = elisp/undo-tree
+	url = https://gitlab.com/tsc25/undo-tree.git
