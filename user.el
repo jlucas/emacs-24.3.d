@@ -15,6 +15,12 @@
 ;; Allow short answers to yes/no prompts
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; Remove UI elements from GUI mode
+(if (fboundp 'scroll-bar-mode)
+    (scroll-bar-mode -1))  ;; emacs-nox doesn't have this function
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+
 ;; No splash screen messages
 (setq inhibit-startup-message t)
 
