@@ -128,6 +128,75 @@
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 
 ;;
+;; eshell
+;;
+
+(setq eshell-prompt-function
+      (lambda ()
+	"Prompt with Git branch"
+	(let ((branch
+	       (replace-regexp-in-string
+		"\n$" ""
+		(shell-command-to-string
+		 "git symbolic-ref HEAD 2>/dev/null"))))
+	  (concat
+	   (abbreviate-file-name (eshell/pwd))
+	   (when (> (length branch) 0)
+	     (format " (%s)"
+		     (replace-regexp-in-string
+		      "refs/heads/" ""
+		      (propertize branch 'face `(:foreground "orange")))))
+	   (if (eq (user-uid) 0) " # " " $ ")))))
+
+(defun eshell-here ()
+  "Opens up a new shell in the directory associated with the
+current buffer's file. The eshell is renamed to match that
+directory to make multiple eshell windows easier.  From:
+http://www.howardism.org/Technical/Emacs/eshell-fun.html"
+  (interactive)
+  (let* ((parent (if (buffer-file-name)
+		     (file-name-directory (buffer-file-name))
+		   default-directory))
+	 (height (/ (window-total-height) 3))
+	 (name   (car (last (split-string parent "/" t)))))
+    (split-window-vertically (- height))
+    (other-window 1)
+    (eshell "new")
+    (rename-buffer (concat "*eshell: " name "*"))
+    (insert (concat "ls"))
+    (eshell-send-input)))
+
+(defun jl/eshell-quit-or-delete-char (arg)
+  (interactive "p")
+  (if (and (eolp) (looking-back eshell-prompt-regexp))
+      (progn
+	(eshell-life-is-too-much) ; Why not? (eshell/exit)
+	(ignore-errors
+	  (delete-window)))
+    (delete-forward-char arg)))
+
+(add-hook 'eshell-mode-hook
+	  (lambda ()
+	    (local-set-key (kbd "C-d") 'jl/eshell-quit-or-delete-char)))
+
+(add-hook 'eshell-mode-hook
+	  (lambda ()
+	    (mapcar (lambda (x)
+		      (add-to-list 'eshell-visual-commands x))
+		    '("ssh"
+		      "tail"
+		      "tig"
+		      "irssi"
+		      "bitchx"
+		      "talk"
+		      "ytalk"
+		      "mutt"
+		      "nano"))))
+
+(global-set-key (kbd "C-c t") 'eshell-here)
+(global-set-key (kbd "C-c T") 'eshell)
+
+;;
 ;; Key binds
 ;;
 
