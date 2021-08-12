@@ -127,3 +127,29 @@
 (global-set-key (kbd "C-w") 'backward-kill-word) ; as in the shell, vim. etc.
 (global-set-key (kbd "M-%") 'replace-regexp) ; do i ever not want this?
 
+;;
+;; Notes
+;;
+
+;; Rectangle mark mode (C-x SPC) was added in Emacs 24.4.  In Emacs
+;; 24.3 you have to use these older commands to operate on a
+;; rectangular selection.
+;;
+;; * Kill a rectangle: kill-rectangle ‘C-x r k’
+;; * Yank the last killed rectangle: yank-rectangle ‘C-x r y’
+;; * Copy a rectangle: copy-rectangle-as-kill ‘C-x r M-w’
+;; * Insert a text to replace rectangle region: string-rectangle ‘C-x r t’
+;; * Insert a text rectangle: string-insert-rectangle (unbound). This
+;;   command is almost superfluous, as you can achieve the same result by
+;;   marking an “empty rectangle” as described above, and then call
+;;   ‘string-rectangle’. The one tiny difference, though, is that
+;;   ‘string-insert-rectangle’ will leave point after the rectangle you
+;;   have marked. In my case, that does not justify a separate command.
+;; * Delete the selected rectangle: delete-rectangle ‘C-x r d’
+;; * Insert a whitespace rectangle into the region: open-rectangle ‘C-x r o’
+;; * Number lines in rectangle: number-to-register ‘C-x r N’. This
+;;   command also inserts a column of spaces after numbers, and can
+;;   conveniently be used to convert consecutive lines into a numbered
+;;   list. With optional arguments START-WITH and FORMAT (prompted for if
+;;   you prefix with C-u), you can number, say, 5 consecutive lines with,
+;;   “3.)” to “7.)”.
