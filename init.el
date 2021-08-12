@@ -53,10 +53,10 @@
 
 ;; Fix a bug where dependencies are returned in reverse order
 (defadvice package-compute-transaction
-		   (before package-compute-transaction-reverse (package-list requirements) activate compile)
-		   "reverse the requirements"
-		   (setq requirements (reverse requirements))
-		   (print requirements))
+  (before package-compute-transaction-reverse (package-list requirements) activate compile)
+  "reverse the requirements"
+  (setq requirements (reverse requirements))
+  (print requirements))
 
 ;;
 ;; Magit 1.4.2 setup
