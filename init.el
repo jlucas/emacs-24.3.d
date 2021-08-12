@@ -12,7 +12,31 @@
 ;; Basic preferences
 ;;
 
+;; Allow short answers to yes/no prompts
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; No splash screen messages
+(setq inhibit-startup-message t)
+
+;; Silence description of the *scratch* buffer
+(setq initial-scratch-message "")
+
+;; Display cursor line/column number in modeline
+(column-number-mode)
+
+;; Save clipboard strings into kill ring before replacing them.
+(setq save-interprogram-paste-before-kill t)
+
+;; https://www.emacswiki.org/emacs/DeleteSelectionMode
+(delete-selection-mode t)
+
+;; Show matched parens
+(setq show-paren-mode 1)
+(setq show-paren-delay 0)
+
+;; linum package line number formatting
+(setq linum-format "%3d ")
+(global-set-key (kbd "C-c n") 'linum-mode)
 
 ;;
 ;; Temp directory, autosaves, and backups
