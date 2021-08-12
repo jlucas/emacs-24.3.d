@@ -59,6 +59,13 @@
     (normal-top-level-add-subdirs-to-load-path))
 
 ;;
+;; Set up theme
+;;
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/theme")
+(load-theme 'xterm16 t)
+
+;;
 ;; Set up package
 ;;
 
