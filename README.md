@@ -15,3 +15,8 @@ and copying around my own build of Emacs is inconvenient.
 So, this is a minimal configuration I can quickly clone onto a RHEL7
 machine.
 
+Git submodules are used instead of ELPA/MELPA in this configuration.
+To check them out, after cloning, run:
+
+    git submodule update --init
+
