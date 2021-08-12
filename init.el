@@ -65,6 +65,9 @@
 (setq magit-last-seen-setup-instructions "1.4.0")
 (setq magit-auto-revert-mode t)
 (require 'magit)
+(defadvice magit-key-mode-popup-committing
+  (after enable-verbose-commit activate)
+  (magit-key-mode-toggle-option (quote committing) "--verbose"))
 (global-set-key (kbd "C-x g") 'magit-status)
 
 ;;
