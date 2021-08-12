@@ -48,12 +48,6 @@
 ;; and `package-pinned-packages`. Most users will not need or want to do this.
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
-;; Add Magit v1 package archive to support old Emacs 24.3
-;; https://magit.vc/elpa/v1/
-(add-to-list 'package-archives
-             '("magit-v1" . "https://magit.vc/elpa/v1/packages/") t)
-;; (add-to-list 'package-pinned-packages '(magit . "magit-v1"))
-
 ;; Initialize the package package
 (package-initialize)
 
