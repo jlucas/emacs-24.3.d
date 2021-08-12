@@ -64,7 +64,7 @@
 		   (print requirements))
 
 ;;
-;; Magit setup
+;; Magit 1.4.2 setup
 ;;
 
 (setq magit-last-seen-setup-instructions "1.4.0")
