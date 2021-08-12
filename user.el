@@ -222,6 +222,13 @@
                                 (dired default-directory)))
 
 ;;
+;; Salt Mode
+;;
+
+(require 'yaml-mode)
+(require 'salt-mode)
+
+;;
 ;; eshell
 ;;
 

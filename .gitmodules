@@ -16,3 +16,15 @@
 [submodule "elisp/elscreen"]
 	path = elisp/elscreen
 	url = https://github.com/shosti/elscreen.git
+[submodule "elisp/yaml-mode"]
+	path = elisp/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode.git
+[submodule "elisp/salt-mode"]
+	path = elisp/salt-mode
+	url = https://github.com/glynnforrest/salt-mode.git
+[submodule "elisp/mmm-mode"]
+	path = elisp/mmm-mode
+	url = https://github.com/purcell/mmm-mode.git
+[submodule "elisp/mmm-jinja2"]
+	path = elisp/mmm-jinja2
+	url = https://github.com/glynnforrest/mmm-jinja2.git
