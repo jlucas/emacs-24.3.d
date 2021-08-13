@@ -1,6 +1,9 @@
 ;; Minimal config for Emacs 24.3
 ;; 24.3 is the version of Emacs in RHEL7 and other older Linux distributions
 
+;; Always load this file as an entry point into my config
+(find-file load-file-name)
+
 ;;
 ;; Enabled commands
 ;;
