@@ -41,7 +41,7 @@
 (delete-selection-mode t)
 
 ;; Show matched parens
-(setq show-paren-mode 1)
+(show-paren-mode 1)
 (setq show-paren-delay 0)
 
 ;; linum package line number formatting
