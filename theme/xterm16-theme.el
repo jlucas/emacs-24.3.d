@@ -110,7 +110,7 @@
    `(rainbow-delimiters-unmatched-face ((t (:foreground ,*paren*))))
 
    ;; show-paren-mode
-   `(show-paren-match ((t (:foreground ,*paren-match* :bold t))))
+   `(show-paren-match ((t (:foreground ,*paren-match* :background ,*background* :bold t))))
    `(show-paren-mismatch ((t (:foreground ,*paren-mismatch* :bold t))))
 
    ;; dired
