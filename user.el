@@ -108,6 +108,10 @@
 (defadvice magit-key-mode-popup-committing
   (after enable-verbose-commit activate)
   (magit-key-mode-toggle-option (quote committing) "--verbose"))
+
+;; Replace current buffer with magit status
+;; https://stackoverflow.com/a/9440613
+(setq magit-status-buffer-switch-function 'switch-to-buffer)
 (global-set-key (kbd "C-x g") 'magit-status)
 
 ;;
