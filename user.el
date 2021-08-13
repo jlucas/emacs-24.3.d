@@ -140,6 +140,46 @@
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 
 ;;
+;; Windmove
+;;
+
+(require 'windmove)
+
+;; Use meta plus HJKL to move around windows.
+;; This replaces some default and mode keybinds
+
+;; M-h bound to mark-paragraph (now rebound to C-M-h)
+;; C-M-h bound to mark-defun (now unbound)
+(global-set-key (kbd "M-h") 'windmove-left)
+(global-set-key (kbd "C-M-h") 'mark-paragraph)
+;; Used to show only files in magit status mode
+(add-hook 'magit-mode-hook
+          (lambda() (local-unset-key (kbd "M-h"))))
+
+;; M-j and C-M-j bound to indent-new-comment-line
+(global-set-key (kbd "M-j") 'windmove-down)
+(global-set-key (kbd "C-M-j") 'indent-new-comment-line)
+
+;; M-k bound to kill-sentence (now rebound to C-M-k)
+;; C-M-k bound to kill-sexp (now unbound, but kill-sentence has a
+;; similar effect under paredit))
+(global-set-key (kbd "M-k") 'windmove-up)
+(global-set-key (kbd "C-M-k") 'kill-sentence)
+
+;; M-l bound to downcase-word (now rebound to C-M-l)
+;; C-M-l bound to reposition-window (now unbound)
+(global-set-key (kbd "M-l") 'windmove-right)
+(global-set-key (kbd "C-M-l") 'downcase-word)
+
+;; Switch to new windows when opening them
+(defadvice split-window-right
+  (after switch-to-window-right activate)
+  (windmove-right))
+(defadvice split-window-below
+  (after switch-to-window-below activate)
+  (windmove-down))
+
+;;
 ;; eshell
 ;;
 
