@@ -106,18 +106,24 @@
 
 (setq magit-auto-revert-mode t)
 
-(require 'magit)
+(defun my/load-magit ()
+  (require 'magit)
 
-;; Always show the diff when committing
-(defadvice magit-key-mode-popup-committing
-  (after enable-verbose-commit activate)
-  (magit-key-mode-toggle-option (quote committing) "--verbose"))
+  ;; Always show the diff when committing
+  (defadvice magit-key-mode-popup-committing
+    (after enable-verbose-commit activate)
+    (magit-key-mode-toggle-option (quote committing) "--verbose"))
 
-;; Replace current buffer with magit status
-;; https://stackoverflow.com/a/9440613
-(setq magit-status-buffer-switch-function 'switch-to-buffer)
+  ;; Replace current buffer with magit status
+  ;; https://stackoverflow.com/a/9440613
+  (setq magit-status-buffer-switch-function 'switch-to-buffer)
+  (setq my/load-magit-was-run t))
 
-(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x g") (lambda ()
+				(interactive)
+				(unless (fboundp 'magit-status)
+				  (my/load-magit))
+				(call-interactively 'magit-status)))
 
 ;;
 ;; Undo-tree 0.7.4 setup
@@ -182,6 +188,8 @@
 ;;
 ;; Dired
 ;;
+
+(require 'dired)
 
 ;; Use minus to go up a level like netrw in vim
 (define-key dired-mode-map (kbd "-") (lambda ()
