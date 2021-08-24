@@ -7,3 +7,6 @@
 [submodule "elisp/undo-tree"]
 	path = elisp/undo-tree
 	url = https://gitlab.com/tsc25/undo-tree.git
+[submodule "elisp/git-link"]
+	path = elisp/git-link
+	url = https://github.com/sshaw/git-link.git
