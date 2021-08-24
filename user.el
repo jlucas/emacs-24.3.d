@@ -126,6 +126,13 @@
 				(call-interactively 'magit-status)))
 
 ;;
+;; git-link
+;;
+
+(require 'git-link)
+(global-set-key (kbd "C-c g l") 'git-link)
+
+;;
 ;; Undo-tree 0.7.4 setup
 ;;
 
