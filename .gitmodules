@@ -13,3 +13,6 @@
 [submodule "elisp/comment-dwim-2"]
 	path = elisp/comment-dwim-2
 	url = https://github.com/remyferre/comment-dwim-2.git
+[submodule "elisp/elscreen"]
+	path = elisp/elscreen
+	url = https://github.com/shosti/elscreen.git
