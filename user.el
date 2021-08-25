@@ -278,6 +278,13 @@ http://www.howardism.org/Technical/Emacs/eshell-fun.html"
 (global-set-key (kbd "C-c T") 'eshell)
 
 ;;
+;; winner
+;;
+
+;; https://www.emacswiki.org/emacs/WinnerMode
+(winner-mode 1)
+
+;;
 ;; Key binds
 ;;
 
