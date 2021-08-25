@@ -10,3 +10,6 @@
 [submodule "elisp/git-link"]
 	path = elisp/git-link
 	url = https://github.com/sshaw/git-link.git
+[submodule "elisp/comment-dwim-2"]
+	path = elisp/comment-dwim-2
+	url = https://github.com/remyferre/comment-dwim-2.git
