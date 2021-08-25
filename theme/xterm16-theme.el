@@ -148,10 +148,10 @@
    `(git-gutter+-modified ((t (:foreground ,*light-brown* :background ,*gray238*))))
 
    ;; elscreen
-   `(elscreen-tab-background-face ((t (:foreground "grey90" :background "grey10"))))
-   `(elscreen-tab-control-face ((t (:foreground "grey90" :background "grey20"))))
-   `(elscreen-tab-current-screen-face ((t (:foreground ,*gray251* :background ,*gray238*))))
-   `(elscreen-tab-other-screen-face ((t (:foreground ,*gray245* :background ,*gray236*))))
+   `(elscreen-tab-background-face ((t (:foreground "grey90" :background "grey10" :underline nil))))
+   `(elscreen-tab-control-face ((t (:foreground "grey90" :background "grey20" :underline nil))))
+   `(elscreen-tab-current-screen-face ((t (:foreground ,*gray251* :background ,*gray238* :underline nil))))
+   `(elscreen-tab-other-screen-face ((t (:foreground ,*gray245* :background ,*gray236* :underline nil))))
 
    ;; fic-face
    `(fic-face ((t (:foreground ,*bright-orange*))))
