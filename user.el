@@ -105,6 +105,13 @@
 (global-set-key (kbd "M-;") 'comment-dwim-2)
 
 ;;
+;; elscreen
+;;
+
+(require 'elscreen)
+(elscreen-start)
+
+;;
 ;; Magit 1.4.2 setup
 ;;
 
