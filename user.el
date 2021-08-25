@@ -254,7 +254,6 @@ http://www.howardism.org/Technical/Emacs/eshell-fun.html"
 	 (height (/ (window-total-height) 3))
 	 (name   (car (last (split-string parent "/" t)))))
     (split-window-vertically (- height))
-    (other-window 1)
     (eshell "new")
     (rename-buffer (concat "*eshell: " name "*"))
     (insert (concat "ls"))
