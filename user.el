@@ -99,6 +99,12 @@
   (print requirements))
 
 ;;
+;; comment-dwim-2
+
+(require 'comment-dwim-2)
+(global-set-key (kbd "M-;") 'comment-dwim-2)
+
+;;
 ;; Magit 1.4.2 setup
 ;;
 
