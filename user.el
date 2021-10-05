@@ -139,6 +139,27 @@
 				(call-interactively 'magit-status)))
 
 ;;
+;; markdown-mode
+;;
+
+(require 'markdown-mode)
+(defun replace-characters-in-line (str)
+  (interactive)
+  (move-beginning-of-line nil)
+  (set-mark-command nil)
+  (move-end-of-line nil)
+  (setq deactivate-mark nil)
+  (kill-ring-save (region-beginning) (region-end))
+  (newline)
+  (insert-char (string-to-char str) (length (car kill-ring))))
+;; Markdown h1
+(global-set-key (kbd "C-c 1")
+		(lambda () (interactive) (replace-characters-in-line "=")))
+;; Markdown h2
+(global-set-key (kbd "C-c 2")
+		(lambda () (interactive) (replace-characters-in-line "-")))
+
+;;
 ;; git-link
 ;;
 
