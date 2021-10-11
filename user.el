@@ -170,8 +170,8 @@
 ;; Undo-tree 0.7.4 setup
 ;;
 
-(setq global-undo-tree-mode 1)
 (require 'undo-tree)
+(global-undo-tree-mode)
 (global-set-key (kbd "C-c u") 'undo-tree-visualize)
 
 ;;
