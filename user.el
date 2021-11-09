@@ -139,6 +139,27 @@
 				(call-interactively 'magit-status)))
 
 ;;
+;; markdown-mode
+;;
+
+(require 'markdown-mode)
+(defun replace-characters-in-line (str)
+  (interactive)
+  (move-beginning-of-line nil)
+  (set-mark-command nil)
+  (move-end-of-line nil)
+  (setq deactivate-mark nil)
+  (kill-ring-save (region-beginning) (region-end))
+  (newline)
+  (insert-char (string-to-char str) (length (car kill-ring))))
+;; Markdown h1
+(global-set-key (kbd "C-c 1")
+		(lambda () (interactive) (replace-characters-in-line "=")))
+;; Markdown h2
+(global-set-key (kbd "C-c 2")
+		(lambda () (interactive) (replace-characters-in-line "-")))
+
+;;
 ;; git-link
 ;;
 
@@ -149,8 +170,8 @@
 ;; Undo-tree 0.7.4 setup
 ;;
 
-(setq global-undo-tree-mode 1)
 (require 'undo-tree)
+(global-undo-tree-mode)
 (global-set-key (kbd "C-c u") 'undo-tree-visualize)
 
 ;;
@@ -261,7 +282,6 @@ http://www.howardism.org/Technical/Emacs/eshell-fun.html"
 	 (height (/ (window-total-height) 3))
 	 (name   (car (last (split-string parent "/" t)))))
     (split-window-vertically (- height))
-    (other-window 1)
     (eshell "new")
     (rename-buffer (concat "*eshell: " name "*"))
     (insert (concat "ls"))
