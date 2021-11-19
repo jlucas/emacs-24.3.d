@@ -343,6 +343,10 @@ http://www.howardism.org/Technical/Emacs/eshell-fun.html"
 (global-set-key (kbd "C-w") 'backward-kill-word) ; as in the shell, vim. etc.
 (global-set-key (kbd "M-%") 'replace-regexp) ; do i ever not want this?
 
+;; Similar to C-o and C-i in vim
+(global-set-key (kbd "C-c o") 'previous-buffer)
+(global-set-key (kbd "C-c i") 'next-buffer)
+
 (defun backward-kill-line (arg)
   "Kill ARG lines backward."
   (interactive "p")
