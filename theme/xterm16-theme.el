@@ -4,6 +4,7 @@
 
 (deftheme xterm16 "A dark color theme based on xterm16.vim")
 
+;; https://www.ditig.com/256-colors-cheat-sheet
 (let ((*normal*             "#b0b0b0")
       (*background*         "#000000")
       (*comments*           "#8787af")
@@ -12,20 +13,26 @@
       (*cursor-underscore*  "#FFFAAA")
       (*darkpurple*         "#8700af")
       (*keywords*           "#0087af")
+      (*deepskyblue3*       "#0087af")  ; 31
       (*line-number*        "#afaf87")
       (*method-declaration* "#a8a8a8")
-      (*gray236*            "#303030")
-      (*gray238*            "#444444")
-      (*gray245*            "#8a8a8a")
-      (*gray251*            "#c6c6c6")
+      (*gray236*            "#303030")  ; 236
+      (*gray237*            "#3a3a3a")  ; 237
+      (*gray238*            "#444444")  ; 238
+      (*gray245*            "#8a8a8a")  ; 245
+      (*gray251*            "#c6c6c6")  ; 251
       (*number*             "#87afaf")
+      (*lightskyblue3*      "#87afaf")  ; 109
+      (*darkseagreen*       "#87af87")  ; 108
       (*operators*          "#00af87")
+      (*darkcyan*           "#00af87")  ; 36
       (*warning*            "#9d7a04")
       (*regexp*             "#90d070")
       (*string*             "#87afaf")
       (*bluegreen*          "#00af87")
       (*cursor*             "#b0b0b0")
       (*cyan*               "#00afaf")
+      (*lightseagreen*      "#00afaf")  ; 37
       (*greenblue*          "#005f5f")
       (*lightgreenblue*     "#87ffaf")
       (*paren*              "#00af87")
@@ -113,6 +120,24 @@
    `(show-paren-match ((t (:foreground ,*paren-match* :background ,*background* :bold t))))
    `(show-paren-mismatch ((t (:foreground ,*paren-mismatch* :bold t))))
 
+   ;; diff
+   `(diff-nonexistent ((t (:foreground ,*lightskyblue3* :background ,*background*))))
+   `(diff-context ((t (:foreground ,*darkseagreen* :background ,*background*))))
+   `(diff-hunk-header ((t (:foreground ,*deepskyblue3* :background ,*background*))))
+   `(diff-indicator-removed ((t (:foreground ,*darkcyan* :background ,*background*))))
+   `(diff-removed ((t (:foreground ,*darkcyan* :background ,*background*))))
+   `(diff-indicator-added ((t (:foreground ,*lightseagreen* :background ,*background*))))
+   `(diff-added ((t (:foreground ,*lightseagreen* :background ,*background*))))
+
+   ;; ;; diff
+   ;; `(diff-nonexistent ((t (:foreground ,*lightskyblue3*))))
+   ;; `(diff-context ((t (:foreground ,*darkseagreen*))))
+   ;; `(diff-hunk-header ((t (:foreground ,*deepskyblue3*))))
+   ;; `(diff-indicator-removed ((t (:foreground ,*darkcyan*))))
+   ;; `(diff-removed ((t (:foreground ,*darkcyan*))))
+   ;; `(diff-indicator-added ((t (:foreground ,*lightseagreen*))))
+   ;; `(diff-added ((t (:foreground ,*lightseagreen*))))
+
    ;; dired
    `(dired-directory ((t (:ground ,*keywords* :weight bold))))
    `(dired-symlink ((t (:foreground ,*paren-match* :weight bold))))
@@ -155,6 +180,13 @@
 
    ;; fic-face
    `(fic-face ((t (:foreground ,*bright-orange*))))
+
+   ;; magit-item-highlight
+   `(magit-diff-none ((t (:background ,*gray236*))))
+   `(magit-diff-del ((t (:background ,*gray236*))))
+   `(magit-diff-add ((t (:background ,*gray236*))))
+   `(magit-diff-hunk-header ((t (:background ,*gray237*))))
+   `(magit-item-highlight ((t (:background ,*gray237*))))
 
    ;; markdown-mode
    `(markdown-header-delimiter-face ((t (:foreground ,*bluegreen*))))
