@@ -112,6 +112,12 @@
 (elscreen-start)
 
 ;;
+;; ffap
+;;
+
+(ffap-bindings)
+
+;;
 ;; Magit 1.4.2 setup
 ;;
 
