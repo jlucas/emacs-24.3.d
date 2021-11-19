@@ -347,6 +347,18 @@ http://www.howardism.org/Technical/Emacs/eshell-fun.html"
 (global-set-key (kbd "C-c o") 'previous-buffer)
 (global-set-key (kbd "C-c i") 'next-buffer)
 
+(defun scroll-window-down (arg)
+  "Move display up one line"
+  (interactive "p")
+  (scroll-down arg))
+(global-set-key "\M-\S-p" 'scroll-window-down)
+
+(defun scroll-window-up (arg)
+  "Move display down one line"
+  (interactive "p")
+  (scroll-up arg))
+(global-set-key "\M-\S-n" 'scroll-window-up)
+
 (defun backward-kill-line (arg)
   "Kill ARG lines backward."
   (interactive "p")
