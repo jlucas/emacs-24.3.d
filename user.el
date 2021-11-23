@@ -61,6 +61,15 @@
 (setq create-lockfiles nil)
 
 ;;
+;; sh-mode configuration
+;;
+
+;; Use spaces instead of tabs in shell scripts
+(defun turn-off-indent-tabs-mode ()
+  (setq indent-tabs-mode nil))
+(add-hook 'sh-mode-hook #'turn-off-indent-tabs-mode)
+
+;;
 ;; Set up load-path
 ;;
 
