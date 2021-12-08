@@ -236,6 +236,13 @@
   (windmove-down))
 
 ;;
+;; wrap-region
+;;
+
+(require 'wrap-region)
+(wrap-region-global-mode t)
+
+;;
 ;; Dired
 ;;
 
