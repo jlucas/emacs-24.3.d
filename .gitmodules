@@ -37,3 +37,6 @@
 [submodule "elisp/wrap-region.el-git"]
 	path = elisp/wrap-region.el-git
 	url = https://github.com/rejeep/wrap-region.el.git
+[submodule "elisp/git-gutter-plus"]
+	path = elisp/git-gutter-plus
+	url = https://github.com/nonsequitur/git-gutter-plus

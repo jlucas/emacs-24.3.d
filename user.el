@@ -121,6 +121,13 @@
 (elscreen-start)
 
 ;;
+;; git-gutter+
+;;
+
+(require 'git-gutter+)
+(global-git-gutter+-mode t)
+
+;;
 ;; Magit 1.4.2 setup
 ;;
 
