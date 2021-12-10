@@ -49,6 +49,13 @@
 (global-set-key (kbd "C-c n") 'linum-mode)
 
 ;;
+;; Built-in file modes
+;;
+
+;; Use tcl-mode for Environment Modules
+(add-to-list 'magic-mode-alist '("#%Module" . tcl-mode))
+
+;;
 ;; Temp directory, autosaves, and backups
 ;;
 
