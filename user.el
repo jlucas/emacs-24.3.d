@@ -174,6 +174,7 @@
 ;; Markdown h2
 (global-set-key (kbd "C-c 2")
 		(lambda () (interactive) (replace-characters-in-line "-")))
+(add-to-list 'auto-mode-alist '("\\.mdwn\\'" . markdown-mode))
 
 ;;
 ;; git-link
