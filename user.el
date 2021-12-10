@@ -135,6 +135,14 @@
 (global-git-gutter+-mode t)
 
 ;;
+;; ibuffer
+;;
+
+;; Ships with Emacs
+(require 'ibuffer)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;;
 ;; Magit 1.4.2 setup
 ;;
 
