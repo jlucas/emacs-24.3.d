@@ -48,6 +48,9 @@
 (setq linum-format "%3d ")
 (global-set-key (kbd "C-c n") 'linum-mode)
 
+;; Prefer spaces to tabs
+(setq-default indent-tabs-mode nil)
+
 ;;
 ;; Built-in file modes
 ;;
