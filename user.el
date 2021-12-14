@@ -31,6 +31,9 @@
 ;; Silence description of the *scratch* buffer
 (setq initial-scratch-message "")
 
+;; Silence bell
+(setq visible-bell t)
+
 ;; Display cursor line/column number in modeline
 (column-number-mode)
 
