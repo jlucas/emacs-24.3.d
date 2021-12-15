@@ -198,6 +198,13 @@
 (add-to-list 'auto-mode-alist '("\\.mdwn\\'" . markdown-mode))
 
 ;;
+;; multiple-cursors
+;;
+
+(require 'multiple-cursors)
+(global-set-key  (kbd "C-c m") 'mc/edit-lines)
+
+;;
 ;; git-link
 ;;
 

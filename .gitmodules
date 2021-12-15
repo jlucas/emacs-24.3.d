@@ -40,3 +40,6 @@
 [submodule "elisp/git-gutter-plus"]
 	path = elisp/git-gutter-plus
 	url = https://github.com/nonsequitur/git-gutter-plus
+[submodule "elisp/multiple-cursors.el-git"]
+	path = elisp/multiple-cursors.el-git
+	url = https://github.com/magnars/multiple-cursors.el.git
