@@ -43,3 +43,6 @@
 [submodule "elisp/multiple-cursors.el-git"]
 	path = elisp/multiple-cursors.el-git
 	url = https://github.com/magnars/multiple-cursors.el.git
+[submodule "elisp/powershell"]
+	path = elisp/powershell
+	url = https://github.com/jschaf/powershell.el.git
